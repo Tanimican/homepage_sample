@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="homepage_sample.css">
+  <title>養鶏公式サイト</title>
+</head>
+<body>
+    <div class="top">
+      <div class="title" id="title">養鶏公式サイト</div>
+      <div id="subtitle">
+        <a href="homepage1.html#title">home</a>
+        /
+        <a href="homepage1.html#title_1">お知らせ</a>
+        /
+        <a href="homepage2.html#title">企業情報</a>
+        /
+        <a href="homepage1.html#title">お問い合わせ</a>
+        /
+        <a href="homepage3.html#title">事業説明</a>
+        /
+        <a href="homepage4_shop.php#title">ショップ</a>
+      </div>
+    </div>
+    <div class="top">
+      <div class="sidemenu">
+        <ul>
+          <h4>部署種類</h4>
+          <li><a href="homemenu_side1.html#title">加工工場</a></li>
+          <li><a href="homemenu_side2.html#title">肥育農場</a></li>
+          <li><a href="homemenu_side3.html#title">種鶏農場</a></li>
+          <li><a href="homemenu_side4.html#title">機動・サービス班</a></li>
+          <li><a href="homemenu_side5.html#title">孵卵場</a></li>
+        </ul>
+      </div>
+      <div class="corporateinformation">
+        <h1 class="title_1">会社の歴史</h1>
+        <img src="https://mangatop.info/sozai/wp-content/uploads/2016/11/niwatori-sumi-yoko3.png" alt="鶏" width="300" height="250">
+        <p id="title_1_1">この会社について〜〜〜</p>
+        <h1 class="title_1">お知らせ</h1>
+        <h5 class="news">2022.7.22ホームページ作成</h2>
+        <h5 class="news">2022.7.23ホームページ作成</h2>
+        <h5 class="news">2022.7.24ホームページ作成</h2>
+        <h5 class="news">2022.7.25ホームページ作成</h2>
+        <form action="homepage_inquiry.php" method="post" target="_blank">
+          <h2>お問い合わせ内容</h2>
+            <div class="box">
+              <label class="username" for="username">お名前</label>
+              <input id="username" type="text" name="name">
+              <div id="name_err"></div>
+            </div>
+            
+            <div class="box">
+              <label class="email" for="email">メールアドレス</label>
+              <input id="email" type="email" name="email">
+              <div id="email_err"></div>
+            </div>
+            
+            <div class="box">
+              <label class="text" for="text">お問い合せ内容</label>
+              <textarea id="text" name="inquiry" class="inquiry"></textarea>
+              <div id="inquiry_err"></div>
+            </div>
+            
+            <div class="btn">
+             <input type="submit" value="送信" onclick="return input_check();">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="sp-copyright">Copyright © 2022 Corporation all rights reserved.</div>
+</body>
+</html>
+<script>
+  function input_check() {
+    // ユーザー名の入力情報を取得
+    let username = document.getElementById("username").value;
+    // メールアドレスの入力情報を取得
+    let email = document.getElementById("email").value;
+    // お問い合わせ内容の入力情報を取得
+    let inquiry = document.getElementById("text").value;
+    // 初期化する
+    document.getElementById("name_err").innerHTML = "";
+    document.getElementById("email_err").innerHTML = "";
+    document.getElementById("inquiry_err").innerHTML = "";
+    // 入力チェックフラグ
+    let input_flg = true;
+    
+    // 名前が入力されているか
+    if (username == "") {
+      document.getElementById("name_err").innerHTML = "お名前を入力してください";
+      document.getElementById("name_err").style.color = "red";
+      input_flg = false;
+    }
+    // メールアドレスが入力されているか
+    if (email == "") {
+      document.getElementById("email_err").innerHTML = "メールアドレスを入力してください";
+      document.getElementById("email_err").style.color = "red";
+      input_flg = false;
+    }
+    // お問い合わせ内容が入力されているか
+    if (inquiry == "") {
+      document.getElementById("inquiry_err").innerHTML = "お問い合わせ内容を入力してください";
+      document.getElementById("inquiry_err").style.color = "red";
+      input_flg = false;
+    }
+    return input_flg;
+  }
+</script>
